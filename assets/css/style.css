@@ -1,0 +1,318 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Fond légèrement gris */
+    color: #333;
+}
+
+/* Conteneur principal */
+main {
+    padding: 1rem 2rem; /* Plus de padding horizontal */
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff; /* Fond blanc pour le contenu principal */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    min-height: calc(100vh - 180px); /* Hauteur minimale pour pousser le footer */
+}
+
+/* Header */
+header {
+    background-color: #e9ecef; /* Gris clair */
+    padding: 0; /* Supprimer le padding, Bootstrap navbar gère le sien */
+    border-bottom: 1px solid #dee2e6;
+}
+
+header h1 {
+    margin: 0;
+    color: #495057; /* Gris foncé */
+    font-size: 1.8em;
+}
+
+#logo {
+    width: auto; /* Garder les proportions */
+    display: inline-block; /* Changé pour alignement dans navbar */
+    vertical-align: middle; /* Aide à l'alignement vertical */
+    margin-right: 10px; /* Espace entre logo et texte */
+}
+
+.user-info {
+    font-size: 0.9em;
+    color: #6c757d; /* Gris moyen */
+}
+
+.user-info a {
+    color: #007bff; /* Bleu standard */
+    text-decoration: none;
+    margin-left: 5px;
+}
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9em;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Titres */
+h1, h2, h3 {
+    color: #343a40; /* Noir doux */
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Tableaux */
+/* Les styles généraux de table peuvent rester s'ils sont utilisés ailleurs */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #dee2e6; /* Bordures grises claires */
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle; /* Centrer verticalement */
+}
+
+th {
+    background-color: #f1f3f5; /* Fond très clair pour l'en-tête */
+    font-weight: 600;
+    color: #495057;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Alternance de couleurs */
+}
+
+tr:hover {
+    background-color: #e9ecef; /* Effet au survol */
+}
+
+/* Boutons et Liens d'action */
+/* Conserver .reserve-button si vous voulez des styles spécifiques en plus de Bootstrap */
+.action-link, .reserve-button, .add-button, input[type="submit"], button {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px 2px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.95em;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    vertical-align: middle; /* Assure un bon alignement si mélangé avec d'autres éléments */
+}
+.action-link:hover, .reserve-button:hover, .add-button:hover, input[type="submit"]:hover, button:hover {
+     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+     position: relative;
+     top: 1px; /* Ajouter un léger décalage pour un effet "pressé" */
+}
+
+/* Styles spécifiques pour les liens dans les cellules de tableau si nécessaire */
+td .action-link {
+    padding: 5px 10px; /* Padding plus petit pour les liens dans les tableaux */
+    margin: 2px;
+    font-size: 0.9em;
+}
+
+/* Couleurs spécifiques des boutons */
+.reserve-button, .add-button, input[type="submit"][value*="Ajouter"], input[type="submit"][value*="Réserver"] {
+    background-color: #28a745; /* Vert */
+    color: white;
+}
+.reserve-button:hover, .add-button:hover, input[type="submit"][value*="Ajouter"]:hover, input[type="submit"][value*="Réserver"]:hover {
+    background-color: #218838;
+}
+
+.action-link[href*="modifier.php"], input[type="submit"][value*="Modifier"] {
+    background-color: #007bff; /* Bleu */
+    color: white;
+}
+.action-link[href*="modifier.php"]:hover, input[type="submit"][value*="Modifier"]:hover {
+    background-color: #0056b3;
+}
+
+.action-link[href*="supprimer.php"] {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+}
+.action-link[href*="supprimer.php"]:hover {
+    background-color: #c82333;
+}
+
+.action-link[href*="retourner.php"] {
+    background-color: #ffc107; /* Jaune */
+    color: #212529; /* Texte foncé pour contraste */
+}
+.action-link[href*="retourner.php"]:hover {
+    background-color: #e0a800;
+}
+
+input[type="submit"][value*="connecter"] {
+     background-color: #007bff; /* Bleu */
+     color: white;
+     width: 100%; /* Prend toute la largeur dans le conteneur de login */
+     padding: 12px;
+     font-size: 1.1em;
+}
+input[type="submit"][value*="connecter"]:hover {
+     background-color: #0056b3;
+}
+
+/* Formulaires */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclut padding et border dans la largeur */
+    font-size: 1em;
+    background-color: #fff; /* Fond blanc pour les champs */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #80bdff; /* Highlight bleu au focus */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Messages d'erreur et de succès */
+.message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Disponibilité */
+.dispo-oui {
+    color: #28a745; /* Vert */
+    font-weight: bold;
+}
+
+.dispo-non {
+    color: #dc3545; /* Rouge */
+    font-weight: bold;
+}
+
+/* Alertes date de retour */
+.date-alerte-orange {
+    color: #fd7e14; /* Orange Bootstrap */
+    font-weight: bold;
+}
+
+.date-alerte-rouge {
+    color: #dc3545; /* Rouge Bootstrap */
+    font-weight: bold;
+}
+
+.date-ok-vert {
+    color: #28a745; /* Vert Bootstrap */
+    font-weight: bold; 
+}
+
+/* Liens dans le dashboard */
+.dashboard-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+.dashboard-links li {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f1f3f5;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+.dashboard-links li:hover {
+    background-color: #e9ecef;
+}
+.dashboard-links a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #007bff;
+    display: block; /* Pour que le lien prenne toute la zone */
+}
+.dashboard-links a:hover {
+    color: #0056b3;
+}
+
+/* Conteneur de connexion */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Styles spécifiques pour les messages dans login.php */
+.login-container .error-message,
+.login-container .success-message {
+    text-align: center;
+    margin-bottom: 15px;
+}
